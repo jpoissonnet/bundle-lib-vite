@@ -1,0 +1,24 @@
+{
+	"dependencies": {
+		"@babel/cli": "^7.24.8",
+		"@babel/core": "^7.25.2",
+		"@babel/preset-env": "^7.25.4",
+		"@babel/preset-react": "^7.24.7",
+		"@linaria/babel-preset": "^5.0.4",
+		"@linaria/core": "^6.2.0",
+		"@linaria/react": "^6.2.1",
+		"@vitejs/plugin-react": "^4.3.1",
+		"@wyw-in-js/babel-preset": "^0.5.4",
+		"glob": "^11.0.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"styled-components": "^6.1.12",
+		"vite": "^5.4.2"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@wyw-in-js/vite": "^0.5.4",
+		"prettier": "3.3.3",
+		"vite-plugin-lib-inject-css": "2.1.1"
+	}
+}
