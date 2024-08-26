@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   color: white;
 
   &:hover {
-    border-color: blue;
+    background-color: blue;
   }
 `;
 

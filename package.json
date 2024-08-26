@@ -1,5 +1,8 @@
 {
 	"dependencies": {
+		"@tornado/title": "^1.0.0",
+		"@tornado/button": "^1.0.0",
+		"@tornado/buttonsc": "^1.0.0",
 		"@babel/cli": "^7.24.8",
 		"@babel/core": "^7.25.2",
 		"@babel/preset-env": "^7.25.4",

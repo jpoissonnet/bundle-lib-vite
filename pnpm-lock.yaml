@@ -4,60 +4,77 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@babel/cli':
-    specifier: ^7.24.8
-    version: 7.24.8(@babel/core@7.25.2)
-  '@babel/core':
-    specifier: ^7.25.2
-    version: 7.25.2
-  '@babel/preset-env':
-    specifier: ^7.25.4
-    version: 7.25.4(@babel/core@7.25.2)
-  '@babel/preset-react':
-    specifier: ^7.24.7
-    version: 7.24.7(@babel/core@7.25.2)
-  '@linaria/babel-preset':
-    specifier: ^5.0.4
-    version: 5.0.4
-  '@linaria/core':
-    specifier: ^6.2.0
-    version: 6.2.0
-  '@linaria/react':
-    specifier: ^6.2.1
-    version: 6.2.1(react@18.3.1)
-  '@vitejs/plugin-react':
-    specifier: ^4.3.1
-    version: 4.3.1(vite@5.4.2)
-  '@wyw-in-js/babel-preset':
-    specifier: ^0.5.4
-    version: 0.5.4
-  glob:
-    specifier: ^11.0.0
-    version: 11.0.0
-  react:
-    specifier: ^18.3.1
-    version: 18.3.1
-  react-dom:
-    specifier: ^18.3.1
-    version: 18.3.1(react@18.3.1)
-  styled-components:
-    specifier: ^6.1.12
-    version: 6.1.12(react-dom@18.3.1)(react@18.3.1)
-  vite:
-    specifier: ^5.4.2
-    version: 5.4.2
+importers:
 
-devDependencies:
-  '@wyw-in-js/vite':
-    specifier: ^0.5.4
-    version: 0.5.4(vite@5.4.2)
-  prettier:
-    specifier: 3.3.3
-    version: 3.3.3
-  vite-plugin-lib-inject-css:
-    specifier: 2.1.1
-    version: 2.1.1(vite@5.4.2)
+  .:
+    dependencies:
+      '@babel/cli':
+        specifier: ^7.24.8
+        version: 7.24.8(@babel/core@7.25.2)
+      '@babel/core':
+        specifier: ^7.25.2
+        version: 7.25.2
+      '@babel/preset-env':
+        specifier: ^7.25.4
+        version: 7.25.4(@babel/core@7.25.2)
+      '@babel/preset-react':
+        specifier: ^7.24.7
+        version: 7.24.7(@babel/core@7.25.2)
+      '@linaria/babel-preset':
+        specifier: ^5.0.4
+        version: 5.0.4
+      '@linaria/core':
+        specifier: ^6.2.0
+        version: 6.2.0
+      '@linaria/react':
+        specifier: ^6.2.1
+        version: 6.2.1(react@18.3.1)
+      '@tornado/button':
+        specifier: ^1.0.0
+        version: link:packages/tornado/button
+      '@tornado/buttonsc':
+        specifier: ^1.0.0
+        version: link:packages/tornado/buttonsc
+      '@tornado/title':
+        specifier: ^1.0.0
+        version: link:packages/tornado/title
+      '@vitejs/plugin-react':
+        specifier: ^4.3.1
+        version: 4.3.1(vite@5.4.2)
+      '@wyw-in-js/babel-preset':
+        specifier: ^0.5.4
+        version: 0.5.4
+      glob:
+        specifier: ^11.0.0
+        version: 11.0.0
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      styled-components:
+        specifier: ^6.1.12
+        version: 6.1.12(react-dom@18.3.1)(react@18.3.1)
+      vite:
+        specifier: ^5.4.2
+        version: 5.4.2
+    devDependencies:
+      '@wyw-in-js/vite':
+        specifier: ^0.5.4
+        version: 0.5.4(vite@5.4.2)
+      prettier:
+        specifier: 3.3.3
+        version: 3.3.3
+      vite-plugin-lib-inject-css:
+        specifier: 2.1.1
+        version: 2.1.1(vite@5.4.2)
+
+  packages/tornado/button: {}
+
+  packages/tornado/buttonsc: {}
+
+  packages/tornado/title: {}
 
 packages:
 

@@ -6,38 +6,39 @@ import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 
-export default defineConfig(() => ({
-  build: {
-    lib: {
-      entry: resolve(__dirname, "packages/tornado/index.js"),
-      formats: ["es"],
-      name: "tornado",
-      fileName: "tornadoIndex",
-    },
-    rollupOptions: {
-      external: ["react", "react/jsx-runtime"],
-      input: Object.fromEntries(
-        glob
-          .sync("packages/**/*.jsx", {
-            ignore: ["packages/**/*.d.ts"],
-          })
-          .map((file) => [
-            // The name of the entry point
-            // lib/nested/foo.ts becomes nested/foo
-            relative(
-              "packages",
-              file.slice(0, file.length - extname(file).length),
-            ),
-            // The absolute path to the entry file
-            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-            fileURLToPath(new URL(file, import.meta.url)),
-          ]),
-      ),
-      output: {
-        assetFileNames: "assets/[name][extname]",
-        entryFileNames: "[name].js",
+export default defineConfig(() => {
+  return {
+    build: {
+      lib: {
+        entry: glob
+          .sync("packages/tornado/**/*/index.js")
+          .map((barrel) => resolve(__dirname, barrel)),
+        formats: ["es"],
+      },
+      rollupOptions: {
+        external: [
+          "react",
+          "react/jsx-runtime",
+          "@linaria/react",
+          "styled-components",
+        ],
+        input: Object.fromEntries(
+          glob
+            .sync("packages/**/*/index.js")
+            .map((file) => [
+              relative(
+                "packages",
+                file.slice(0, file.length - extname(file).length),
+              ),
+              fileURLToPath(new URL(file, import.meta.url)),
+            ]),
+        ),
+        output: {
+          assetFileNames: "[name][extname]",
+          entryFileNames: "[name].js",
+        },
       },
     },
-  },
-  plugins: [react(), linaria(), libInjectCss()],
-}));
+    plugins: [react(), linaria(), libInjectCss()],
+  };
+});
